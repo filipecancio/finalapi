@@ -1,9 +1,12 @@
 const { Router } = require('express');
+const getPokemonEspecies = require('../server/pokeserver');
 
 const listRoutes = Router();
 
 listRoutes.get("/", (req, response) =>{
-    response.send({message:"Hi, I'm list"}) 
+    getPokemonEspecies("", async (body) =>{
+        response.send(body)
+    }) 
 })
 
 module.exports =  listRoutes

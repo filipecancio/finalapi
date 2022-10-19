@@ -3,8 +3,8 @@ const request = require('request')
 
 const BASE_URL = 'https://pokeapi.co/api/v2/'
 
-const getPokemonEspecies = (fun) => {
-    request(`${BASE_URL}pokemon-species/`,(err,res,body)=> {
+const getPokemonEspecies = (id,fun) => {
+    request(`${BASE_URL}pokemon-species${id}/`,(err,res,body)=> {
         fun(body)
         return body
     })
