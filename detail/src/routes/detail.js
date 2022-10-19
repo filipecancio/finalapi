@@ -1,9 +1,13 @@
 const { Router } = require('express');
+const getPokemonDetail = require('../server/pokeserver');
 
 const detailRoutes = Router();
 
-detailRoutes.get("/", (req, response) =>{
-    response.send({message:"Hi, I'm detail"}) 
+detailRoutes.get("/:id", (req, response) =>{
+    const id = req.params.id
+    getPokemonDetail(id, async (body) =>{
+        response.send(body)
+    })
 })
 
 module.exports =  detailRoutes
