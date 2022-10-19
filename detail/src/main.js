@@ -1,0 +1,1 @@
+console.log({"message":"Hi, I'm detail"})
